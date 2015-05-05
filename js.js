@@ -2,8 +2,8 @@
       cname = "www.vote-hillary-2016.com";
       cvalue = true;
       var d = new Date();
-      d.setTime(d.getTime() + (1*24*60*60*1000));
-      // d.setTime(d.getTime() + (20000));
+      // d.setTime(d.getTime() + (1*24*60*60*1000));
+      d.setTime(d.getTime() + (10000));
       var expires = "expires="+d.toUTCString();
       document.cookie = cname + "=" + cvalue + "; " + expires;
   }
@@ -16,14 +16,15 @@
 
   function checkForCookie() {
     var x = getCookie();
-    if (x === true) {
-      alert('you have a cookie')
-    } else {
+    if (x !== true) {
       setCookie();
-      alert('we just set a cookie');
+      // alert('==! worked');
     }
-  }
+  };
 
+  function addPts() {
+    // debugger
+  };
 
 
 
@@ -35,4 +36,14 @@ $(document).ready(function() {
     var x = getCookie();
     console.log(x);
   });
+
+  $('#thumbsUp').on('click', function() {
+    var x = $('#'+this.id+"Add").html();
+    debugger
+    parseInt(x) + 1;
+  });
+  $('#thumbsDown').on('click', function() {
+    $('#scoreCard').find('#'+this.id + "Add");
+  });
+
 });
