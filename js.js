@@ -38,12 +38,12 @@ $(document).ready(function() {
   });
 
   $('#thumbsUp').on('click', function() {
-    var x = $('#'+this.id+"Add").html();
-    debugger
-    parseInt(x) + 1;
+    var x = parseInt($('#'+this.id+"Add").html());
+    $('#'+this.id+"Add").html(x+1);
   });
   $('#thumbsDown').on('click', function() {
-    $('#scoreCard').find('#'+this.id + "Add");
+    var x = parseInt($('#'+this.id+"Add").html());
+    $('#'+this.id+"Add").html(x+1);
   });
 
 });
