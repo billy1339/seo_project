@@ -46,7 +46,6 @@
           voteNumber: newNumber }
         }
     }).done(function(response) {
-      debugger
       console.log(response);
     });
   }
@@ -59,13 +58,31 @@
           voteNumber: newNumber }
         }
     }).done(function(response) {
-      debugger
       console.log(response);
+    });
+  }
+
+  function getVotes() {
+    var downNumber, upNumber;
+    $.ajax({
+      url: 'http://localhost:3000/thumbs_downs/1',
+      type: 'GET'
+    }).done(function(response) {
+      downNumber = response.voteNumber
+      $('#thumbsDownAdd').html(downNumber);
+    });
+    $.ajax({
+      url: 'http://localhost:3000/thumbs_ups/1',
+      type: 'GET'
+    }).done(function(response) {
+      upNumber = response.voteNumber
+      $('#thumbsUpAdd').html(upNumber);
     });
   }
 
 
 $(document).ready(function() {
+  getVotes();
 
   $('#thumbsUp').on('click', function() {
     addAVote(this);
