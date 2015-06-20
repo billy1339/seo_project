@@ -80,6 +80,12 @@
     });
   }
 
+  // make the click event so that when you click the thumbs up
+  // or thumbs down the thumbs updown is replaced with the
+  // totoal number of votes... and if you have already voted
+  // then the votes appears and you dont see the thumbs updown
+  // just the votes number
+
 
 $(document).ready(function() {
   getVotes();
