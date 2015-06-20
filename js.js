@@ -87,6 +87,25 @@
   // just the votes number
 
 
+  // this is repetitive, combine with getCookie()
+  function checkIfThumsOrVotes() {
+    if (document.cookie === "www.vote-hillary-2016.com=true") {
+      return false
+    } else {
+      return true
+    }
+  };
+
+  function determineShowThumbsofVotes() {
+    var x = checkIfThumsOrVotes();
+    if (x === true) {
+      // show votes
+    } else {
+      // show thumbs
+    }
+  }
+
+
 $(document).ready(function() {
   getVotes();
 
