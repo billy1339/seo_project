@@ -15,18 +15,19 @@
 }
 #thumbsUp {
   text-align: center;
-  height: 300%;
-  width: 300%;
+  font-size: 59px;
+
 }
 #thumbsDown {
   text-align: center;
-  height: 50px;
-  width: 50px;
+  font-size: 59px;
 }
 
 #thumbsUpAdd {
   text-align: center;
+  font-size: 50px;
 }
 #thumbsDownAdd {
   text-align: center;
+  font-size: 50px;
 }
