@@ -89,7 +89,7 @@
 
   // this is repetitive, combine with getCookie()
   function checkIfThumsOrVotes() {
-    if (document.cookie === "www.vote-hillary-2016.com=true") {
+    if (getCookie()) {
       return false
     } else {
       return true
@@ -99,11 +99,17 @@
   function determineShowThumbsofVotes() {
     var x = checkIfThumsOrVotes();
     if (x === true) {
-      // show votes
+      $('#voteResults').hide();
+      $('#thumbsShow').show()
+      $('#seeVoteTotal').show();
     } else {
-      // show thumbs
+      $('#thumbsShow').hide();
+      $('#voteResults').show();
+      $('#seeVoteTotal').hide();
     }
   }
+
+
 
 
 $(document).ready(function() {
@@ -114,6 +120,17 @@ $(document).ready(function() {
   });
   $('#thumbsDown').on('click', function() {
     addAVote(this);
+  });
+
+  determineShowThumbsofVotes();
+
+  $('#seeVoteTotal').on('click', function() {
+    $('#thumbsShow').show('slow');
+  });
+
+  $('#thumbsShow').on('click', function() {
+    $('#thumbsShow').hide('slow');
+    $('#voteResults').show('slow');
   });
 
 });
