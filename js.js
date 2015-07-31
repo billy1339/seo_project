@@ -87,8 +87,7 @@
   // just the votes number
 
 
-  // this is repetitive, combine with getCookie()
-  function checkIfThumsOrVotes() {
+  function checkForCookieAndReturnResult() {
     if (getCookie()) {
       return false
     } else {
@@ -96,18 +95,18 @@
     }
   };
 
-  function determineShowThumbsofVotes() {
-    var x = checkIfThumsOrVotes();
-    if (x === true) {
-      $('#voteResults').hide();
-      $('#thumbsShow').show()
-      $('#seeVoteTotal').show();
-    } else {
-      $('#thumbsShow').hide();
-      $('#voteResults').show();
-      $('#seeVoteTotal').hide();
-    }
-  }
+  // function determineShowThumbsofVotes() {
+  //   var x = checkForCookieAndReturnResult();
+  //   if (x === true) {
+  //     $('#voteResults').hide();
+  //     $('#thumbsShow').show()
+  //     $('#seeVoteTotal').show();
+  //   } else {
+  //     $('#thumbsShow').hide();
+  //     $('#voteResults').show();
+  //     $('#seeVoteTotal').hide();
+  //   }
+  // }
 
 
 
@@ -122,15 +121,15 @@ $(document).ready(function() {
     addAVote(this);
   });
 
-  determineShowThumbsofVotes();
+  //determineShowThumbsofVotes();
 
-  $('#seeVoteTotal').on('click', function() {
-    $('#thumbsShow').show('slow');
-  });
+  // $('#seeVoteTotal').on('click', function() {
+  //   //$('#thumbsShow').show('slow');
+  // });
 
-  $('#thumbsShow').on('click', function() {
-    $('#thumbsShow').hide('slow');
-    $('#voteResults').show('slow');
-  });
+  // $('#thumbsShow').on('click', function() {
+  //   $('#thumbsShow').hide('slow');
+  //   $('#voteResults').show('slow');
+  // });
 
 });
