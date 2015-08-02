@@ -2,8 +2,8 @@
       cname = "www.vote-hillary-2016.com";
       cvalue = true;
       var d = new Date();
-      // d.setTime(d.getTime() + (1*24*60*60*1000));
-      d.setTime(d.getTime() + (30000));
+      d.setTime(d.getTime() + (1*24*60*60*265*1000));
+      //d.setTime(d.getTime() + (30000));
       var expires = "expires="+d.toUTCString();
       document.cookie = cname + "=" + cvalue + "; " + expires;
   }
@@ -40,7 +40,7 @@
 
   function requestUp(newNumber) {
     $.ajax({
-        url: 'http://localhost:3000/thumbs_ups/1',
+        url: 'https://limitless-inlet-5330.herokuapp.com/thumbs_ups/1',
         type: 'PUT',
         data: {thumbs_up: {
           voteNumber: newNumber }
@@ -52,7 +52,7 @@
 
   function requestDown(newNumber) {
     $.ajax({
-        url: 'http://localhost:3000/thumbs_downs/1',
+        url: 'https://limitless-inlet-5330.herokuapp.com/thumbs_downs/1',
         type: 'PUT',
         data: {thumbs_down: {
           voteNumber: newNumber }
@@ -65,14 +65,14 @@
   function getVotes() {
     var downNumber, upNumber;
     $.ajax({
-      url: 'http://localhost:3000/thumbs_downs/1',
+      url: 'https://limitless-inlet-5330.herokuapp.com/thumbs_downs/1',
       type: 'GET'
     }).done(function(response) {
       downNumber = response.voteNumber
       $('#thumbsDownAdd').html(downNumber);
     });
     $.ajax({
-      url: 'http://localhost:3000/thumbs_ups/1',
+      url: 'https://limitless-inlet-5330.herokuapp.com/thumbs_ups/1',
       type: 'GET'
     }).done(function(response) {
       upNumber = response.voteNumber
